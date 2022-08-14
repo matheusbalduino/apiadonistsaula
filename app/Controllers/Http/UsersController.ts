@@ -71,6 +71,8 @@ export default class UsersController {
       await user.related('card').save(cards)
     }
 
+    await this.loadRelations(user)
+
     response.send(user)
   }
 
@@ -88,12 +90,9 @@ export default class UsersController {
     }
   }
 
-  // public async loadRelations() {
-  //   const user = await User.query()
-  //     .where('id', userid)
-  //     .with('address')
-  //     .with('contact')
-  //     .with('card')
-  //     .first()
-  // }
+  public async loadRelations(user) {
+    await user.load('address')
+    await user.load('contact')
+    await user.load('card')
+  }
 }
