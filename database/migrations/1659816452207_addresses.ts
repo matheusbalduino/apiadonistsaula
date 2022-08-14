@@ -14,6 +14,8 @@ export default class extends BaseSchema {
       table.string('state').notNullable()
       table.string('country').notNullable()
       table.string('description')
+      table.integer('userId').unsigned().references('id').inTable('users')
+
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */

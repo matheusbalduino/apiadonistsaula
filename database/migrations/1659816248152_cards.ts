@@ -13,6 +13,7 @@ export default class extends BaseSchema {
       table.string('card_holder_account').notNullable()
       table.string('card_holder_number').notNullable()
       table.string('card_holder_security_number').notNullable()
+      table.integer('userId').unsigned().references('id').inTable('users')
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL

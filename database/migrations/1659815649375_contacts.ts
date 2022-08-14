@@ -10,6 +10,7 @@ export default class extends BaseSchema {
       table.enum('type', ['Mobile', 'Telephone'])
       table.string('ddd', 3).notNullable()
       table.string('number', 20).notNullable()
+      table.integer('userId').unsigned().references('id').inTable('users')
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
