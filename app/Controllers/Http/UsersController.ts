@@ -28,7 +28,6 @@ export default class UsersController {
 
   public async update({ request, response, params }: HttpContextContract) {
     const { id } = params
-    console.log(id)
 
     const payload = request.all()
 
@@ -61,6 +60,7 @@ export default class UsersController {
     }
 
     if (payload.cards) {
+      console.log('cards works fine')
       cards.card_holder_name = payload.cards.card_holder_name
       cards.card_holder_document = payload.cards.card_holder_document
       cards.card_holder_agency = payload.cards.card_holder_agency

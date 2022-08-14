@@ -24,7 +24,7 @@ export default class Card extends BaseModel {
   @column({})
   public card_holder_security_number: number
 
-  @column({})
+  @column({ columnName: 'userId' })
   public userId: number
 
   @column.dateTime({ autoCreate: true })
