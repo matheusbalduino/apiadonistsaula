@@ -22,10 +22,6 @@ export default class UsersController {
     return response.send({ User: { ...users.toJSON() } })
   }
 
-  public async show({}: HttpContextContract) {}
-
-  public async edit({}: HttpContextContract) {}
-
   public async update({ request, response, params }: HttpContextContract) {
     const { id } = params
 
